@@ -19,8 +19,8 @@ const MenuRoutes = (
 
 const Routes = (
     <Switch>
-        <Route exact path="/" component={Dashboard} />
         <Route path="/404" render={() => <h1>404 NOT FOUND</h1>} />
+        <Route path="/" component={Dashboard} />
     </Switch>
 )
 

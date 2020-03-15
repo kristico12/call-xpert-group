@@ -7,7 +7,7 @@ function Nadbar() {
     return (
         <Fragment>
             <Navbar
-                brand={<Link className="brand-logo" to="/"><img src="/img/XpertGroupLogo.png"/></Link>}
+                brand={<Link className="brand-logo" to="/"><img src="/img/XpertGroupLogo.png" alt="Xpert-logo"/></Link>}
                 centerLogo
                 menuIcon={null}
             >

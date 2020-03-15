@@ -1,7 +1,7 @@
 // dependencies
 import React, {Fragment} from "react";
 import {SideNav, SideNavItem} from 'react-materialize';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // constans
 import {COMPANY_EMAIL, NAME_DEVELOPER} from '../utils/constans';
@@ -15,23 +15,27 @@ const items = [
 function SideBar() {
     return (
         <Fragment>
-            <SideNav className="Side-Nav" >
-                <SideNavItem
-                    user={{
-                        background: 'https://placeimg.com/640/480/nature',
-                        email: COMPANY_EMAIL,
-                        image: '/img/XpertGroup.png',
-                        name: NAME_DEVELOPER
-                    }}
-                    userView
-                />
+            <SideNav className="Side-Nav">
+                <Link to="/">
+                    <SideNavItem
+                        user={{
+                            background: 'https://placeimg.com/640/480/nature',
+                            email: COMPANY_EMAIL,
+                            image: '/img/XpertGroup.png',
+                            name: NAME_DEVELOPER
+                        }}
+                        userView
+                    />
+                </Link>
                 {
                     items.map(info =>
-                        <SideNavItem
-                            icon={info.icon}
-                        >
-                            <Link to={info.route}>{info.name}</Link>
-                        </SideNavItem>
+                        <Link to={info.route}>
+                            <SideNavItem
+                                icon={info.icon}
+                            >
+                                {info.name}
+                            </SideNavItem>
+                        </Link>
                     )
                 }
             </SideNav>
