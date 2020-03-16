@@ -5,6 +5,7 @@ import M from 'materialize-css';
 
 // utils
 import { CallFiles } from '../utils/call';
+import { API_URL } from '../utils/constans';
 
 class ConversationHistory extends Component {
     constructor(props) {
@@ -35,8 +36,9 @@ class ConversationHistory extends Component {
                 })
             } else {
                 // Uploads Files
-                CallFiles()
-                    .then(success => console.log(success))
+                CallFiles(`${API_URL}/api/conversation_history`, this.state.listFiles)
+                    .then(success => success.json())
+                    .then(() => this.props.history.push('/qualification'))
                     .catch(error => console.log(error))
             }
         })

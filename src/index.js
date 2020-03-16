@@ -10,6 +10,7 @@ import { Routes } from './routes.jsx';
 // styles root
 import "./styles/root.css";
 
+
 ReactDOM.render(
     <BrowserRouter>
         {
